@@ -1,0 +1,109 @@
+= Login Web Application
+Oliver Noguera
+:toc: left
+:numbered:
+:lang: en
+:icons: font
+
+:toc!: // Leave this here with a line obove it to remove TOC generation in other parts of the document
+
+
+== Introduction
+
+
+This application will have 3 different private pages and a login form.
+
+In order to access any of these private pages the user will need to have a session started through the login form and ¡
+
+will need to have the right role to be able to access the page.
+
+The application will also have a REST API endpoint exposing the `User` resource.
+Creating, deleting and modifying users and their permissions will be done through this API.
+[source,Shell]
+
+
+== Compiling
+
+To compile the application use:
+
+[source,Shell]
+----
+mvn clean package
+----
+
+
+
+== Runnning
+
+To run application:
+
+[source,Shell]
+----
+java -jar target/test-web-application.jar [periodToExpiredSessions]
+
+Where timeToExpiredSessions is optional argument that means the period of time to expired browser sessions.
+----
+
+
+// **********************************************************************************
+
+=== Webapp
+
+
+To access webapp go to http://localhost:8080/login .
+
+
+
+// **********************************************************************************
+== Endpoints
+
+All endpoints must be prefixed with `/users`. Thay all consume and produce the Json specified below.
+
+
+
+// **********************************************************************************
+
+=== Default Data Sets
+
+By default application contains users  with username "USER_i" with password "PASS_i" 1 <= i <= 3.
+
+Then there are USER_1, USER_2 and USER_3 with passwords PASS_1, PASS_2 and PASS_3.
+
+Each user have role with PAGE_i, so USER_1 have role to PAGE_1.
+
+All users have special role "API" whose purpose is using to read api rest.
+
+Also exists one special user with adminitration role(ADMIN,ADMIN) with role WRITER_API with write access to
+Api rest.
+
+more detail of this bellow.
+
+
+// **********************************************************************************
+
+=== Rest API
+
+This api requires basic auth.User and of this auth there are users of collections.All users can use Get method.
+
+If authentication is not valid endpoints returns 401 status (Unathorired).
+
+Only user with role with writeAccess can use delete, put and post methods. By default ADMIN user.
+
+If you try use not read method with users has not role with writeAccess API returns 403 httpstatus.
+
+Also, default charset for body elements is application/json;charset=utf-8.If you not send header correctly you can
+
+receibe 415 http status( unsupported media type).
+
+In path /src/test/resource there is loginwebapp.postman_collection.json to
+import with postman sample request of this api.
+
+
+// **************************************************************************************
+
+== TODOs
+
+Current implementation of rest api not need query params.That current program not support.
+But there are two ignore unit test  to make tdd for this future implemetation.
+
+
