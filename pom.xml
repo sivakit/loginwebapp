@@ -24,8 +24,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>local-repository</id>
-			<url>file:///${project.build.directory}/repository</url>
+			<id>repo</id>
+			<url>http://34.222.58.217:80801/repository/repo</url>
 		</repository>
 	</distributionManagement>
 	<dependencies>
