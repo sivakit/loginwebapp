@@ -25,7 +25,7 @@
 	<distributionManagement>
 		<repository>
 			<id>repo</id>
-			<url>http://34.222.58.217:80801/repository/repo</url>
+			<url>http://34.222.58.217:8081/repository/repo</url>
 		</repository>
 	</distributionManagement>
 	<dependencies>
