@@ -11,7 +11,7 @@ CMD java -jar login-web-application-${version}.RELEASE.jar
 EXPOSE 8080
 
 
-==========================
+===========================
 
 FROM ubuntu
 
