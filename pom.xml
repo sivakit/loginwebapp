@@ -17,7 +17,7 @@
 		<com.sun.net.httpserver.version>20070405</com.sun.net.httpserver.version>
 		<junit.version>4.12</junit.version>
 		<slf4j.version>1.7.12</slf4j.version>
-		<apache.httpclient.version>4.2.5</apache.httpclient.version>
+		<apache.httpclient.version>4.5.13</apache.httpclient.version>
 	</properties>
 <!--Your comment-->
 
