@@ -10,6 +10,10 @@ RUN wget http://admin:redhat@34.222.58.127:8081/repository/repo/onoguera/login-w
 CMD java -jar login-web-application-${version}.RELEASE.jar
 EXPOSE 8080
 
+RUN wget http://admin:redhat@34.222.58.127:8081/repository/repo/onoguera/login-web-application/${version}.RELEASE/login-web-application-${version}.RELEASE.jar
+CMD java -jar login-web-application-${version}.RELEASE.jar
+EXPOSE 8080
+
 
 ===========================
 
